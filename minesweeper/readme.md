@@ -1,0 +1,1 @@
+For TDD, run `ruby minesweeper_test.rb` in your command line
