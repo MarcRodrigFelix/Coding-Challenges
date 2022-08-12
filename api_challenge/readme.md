@@ -13,10 +13,10 @@ At this stage, we care most about:
 - Documentation
  
 
-### What language do I code in?
-Feel free to choose whichever language you are most comfortable in.
+### What framework do I code in?
+We use Ruby on Rails on a daily basis, but feel free to choose whichever framework you are most comfortable in.
 
-For whatever language you choose, please document in a readme.md the following. 
+For whatever framework you choose, please document in a readme.md the following. 
 1. How to set up your service
 2. How to run your service
 3. How to run the tests, if there are any
