@@ -21,19 +21,23 @@ For example you may receive a 5 x 4 board like this (empty spaces are
 represented here with the '·' character for display on screen):
 
 ```
-·*·*·
-··*··
-··*··
-·····
++-----+
+|·*·*·|
+|··*··|
+|··*··|
+|·····|
++-----+
 ```
 
 And your code will transform it into this:
 
 ```
-1*3*1
-13*31
-·2*2·
-·111·
++-----+
+|1*3*1|
+|13*31|
+|·2*2·|
+|·111·|
++-----+
 ```
 
 For TDD, run `ruby minesweeper_test.rb` in your command line
