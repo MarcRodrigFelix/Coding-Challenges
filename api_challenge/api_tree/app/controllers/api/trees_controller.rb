@@ -6,7 +6,7 @@ class Api::TreesController < ApplicationController
         render json: @trees
     end
 
-    # GET full Tree
+    # GET full (:id) Tree
     def show
         @tree = Tree.find(params[:id])
         render json: @tree
