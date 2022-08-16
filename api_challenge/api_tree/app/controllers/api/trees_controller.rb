@@ -28,7 +28,7 @@ class Api::TreesController < ApplicationController
     private
 
     def tree_params
-        params.require(:tree).permit(:parent_id, :label)
+        params.require(:tree).permit( :label)
     end
 
 end
