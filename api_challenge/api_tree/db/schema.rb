@@ -10,12 +10,12 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2022_08_16_041312) do
+ActiveRecord::Schema[7.0].define(version: 2022_08_16_031417) do
   create_table "trees", force: :cascade do |t|
+    t.integer "parent_id"
     t.string "label"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.integer "parent_tree_id"
   end
 
 end
