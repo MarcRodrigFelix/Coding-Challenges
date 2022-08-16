@@ -6,4 +6,4 @@
 #   movies = Movie.create([{ name: "Star Wars" }, { name: "Lord of the Rings" }])
 #   Character.create(name: "Luke", movie: movies.first)
 
-trees = Tree.create([{ label: "Bear" }, { label: "Mouse" }])
+trees = Tree.create({ label: "Bear" })
