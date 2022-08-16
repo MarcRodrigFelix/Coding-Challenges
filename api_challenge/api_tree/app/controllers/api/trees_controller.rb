@@ -2,8 +2,8 @@ class Api::TreesController < ApplicationController
 
      # GET all Trees
     def index
-        @trees = Tree.where(parent: nil)
-        # render json: @trees.to_json( only: [ :id, :label ], include: [ :children ] )
+        @trees = Tree.where(parent_id: nil)
+        # @trees = Tree.all
         render json: @trees
     end
 
@@ -14,8 +14,8 @@ class Api::TreesController < ApplicationController
         render json: @tree
     end
 
+    # POST tree
     def create
-binding.pry
         @tree = Tree.new(tree_params)
         if @tree.save
             render json: @tree
@@ -28,7 +28,7 @@ binding.pry
     private
 
     def tree_params
-        params.require(:tree).permit(:label, :parent)
+        params.require(:tree).permit(:parent_id, :label)
     end
 
 end
