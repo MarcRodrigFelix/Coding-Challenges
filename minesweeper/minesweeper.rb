@@ -1,3 +1,15 @@
+require 'pry'
+
+class Board
+
+    def self.transform input
+binding.pry
+        puts input
+    end
+
+end
+
+
 =begin
 Write your code for the 'Minesweeper' exercise in this file. Make the tests in
 `minesweeper_test.rb` pass.
