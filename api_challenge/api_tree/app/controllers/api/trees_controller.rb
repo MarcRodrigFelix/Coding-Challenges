@@ -1,13 +1,13 @@
 class Api::TreesController < ApplicationController
 
-     # GET all Trees
+     # GET Trees
     def index
         @trees = Tree.where(parent_id: nil)
         # @trees = Tree.all
         render json: @trees
     end
 
-    # GET full (:id) Tree
+    # GET Tree
     def show
         @tree = Tree.find(params[:id])
         # @children = @tree.children
