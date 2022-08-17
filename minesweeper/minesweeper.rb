@@ -4,9 +4,10 @@ class Board
 
   def self.transform input
     # remove first row and last ("|------|")
-        # substitute spaces for ints
+        # substitute spaces for 0s
             # pass into check cells method that will iterate over each row, index, and current object
-    check_cells(subzero(input[1..-2]))
+    out = check_cells(subzero(input[1..-2]))
+    to_string(out, input)
   end
 
   private 
@@ -24,15 +25,17 @@ class Board
       end
     end
 
-    def closest_cells row, col, obj
+    def closest_cells(row, col, obj)
+      # create new arr with row + and - 1
+        # multiply by each col arr that was just created as well
       arr = (row-1..row+1).flat_map{ |r| [r].product([*(col-1..col+1)])}
       # do not return any of the following cells
       arr.reject do |r, c|
-        r < 0 || c < 0 || [r, c] == [row, col] || !(obj[r] && obj[r])
+        r < 0 || c < 0 || [r, c] == [row, col] || !(obj[r] && obj[r][c])
       end
     end
 
-    def increase_cells row, col, obj
+    def increase_cells(row, col, obj)
       # pass in row ind, col ind, and obj
         # return closest cells and iterate
       closest_cells(row, col, obj).each do |r, c|
@@ -47,6 +50,14 @@ class Board
       end
     end
       
+    def to_string(out, input)
+      # set the board output to what the final results are
+      input[1..-2] = out.map do |line|
+# binding.pry
+        "|#{line.map{ |c| c == 0 ? ' ' : c ? c : '*' }.join}|"
+      end
+      input
+    end
   end
 
 end
